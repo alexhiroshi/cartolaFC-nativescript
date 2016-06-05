@@ -1,0 +1,17 @@
+<Page loaded="pageLoaded">
+	<GridLayout rows="auto, auto">
+		<StackLayout>
+			<TextField hint="Nome do seu time" id="time" />
+			<Button text="Pesquisar" cssClass="primaryActionButton" tap="buscarTime" />
+		</StackLayout>
+		<ListView items="{{ times }}" row="1" itemTap="itemTap">
+			<ListView.itemTemplate>
+				<StackLayout cssClass="item-time">
+					<Label text="{{ time }}" />
+					<Label text="{{ nome }}" cssClass="nome-dono-time" />
+				</StackLayout>
+			</ListView.itemTemplate>
+		</ListView>
+		<ActivityIndicator id="activityIndicator" />
+	</GridLayout>
+</Page>

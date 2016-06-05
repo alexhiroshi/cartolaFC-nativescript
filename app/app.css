@@ -1,0 +1,51 @@
+﻿.title, .meu-time {
+    font-size: 30;
+    horizontal-align: center;
+    margin:20;
+}
+
+.contra {
+	margin:0 10;
+}
+
+.local-jogo, .nome-dono-time {
+	font-size:small;
+}
+
+.escuto {
+	margin:20 5 10;
+}
+
+.rodada {
+    margin:20;
+}
+
+.rodada-atual {
+	margin:0;
+	padding:20;
+	background-color: #cccccc;
+}
+
+.item-time {
+	padding:20;
+}
+
+.fechamento {
+    font-size:30;
+}
+
+TextField {
+    margin:8;
+}
+
+ActivityIndicator {
+    horizontal-align:center;
+    vertical-align:center;
+}
+
+.primaryActionButton
+{
+    background-color:#ff7400;
+    color:#FFFFFF;
+    margin:10;
+}

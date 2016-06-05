@@ -1,0 +1,15 @@
+<Page loaded="pageLoaded">
+	<GridLayout rows="*, auto">
+	  <StackLayout horizontalAlignment="center">
+	    <Label text="Cartola FC" cssClass="title" />
+	    <Label text="{{ rodada }}" cssClass="rodada" horizontalAlignment="center" />
+
+	    <Label text="Mercado fecha em" horizontalAlignment="center" />
+	    <Label text="{{ fechamento }}" horizontalAlignment="center" cssClass="fechamento" />
+	  </StackLayout>
+	  <StackLayout row="1">
+	    <Button text="Busca por Times" cssClass="primaryActionButton" tap="buscaTimes" />
+	    <Button text="Jogos da Rodada" cssClass="primaryActionButton" tap="jogosDaRodada" />
+	  </StackLayout>
+	</GridLayout>
+</Page>

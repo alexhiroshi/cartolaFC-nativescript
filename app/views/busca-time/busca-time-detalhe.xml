@@ -1,0 +1,9 @@
+<Page loaded="pageLoaded">
+	<StackLayout horizontalAlignment="center">
+		<Label text="{{ time }}" cssClass="meu-time" />
+		<Image src="{{ escudo }}" width="160" height="160" />
+		<Label text="{{ nome }}" cssClass="nome-dono" />
+		<Label text="{{ patrimonio }}" cssClass="patrimonio" />
+		<Label text="{{ pontuacao }}" cssClass="pontuacao" />
+	</StackLayout>
+</Page>
