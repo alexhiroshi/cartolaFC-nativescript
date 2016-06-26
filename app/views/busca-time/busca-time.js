@@ -39,12 +39,12 @@ function carregaTimes(time) {
 	var activityIndicator = view.getViewById(_page, "activityIndicator");
     activityIndicator.busy = true;
 
-	httpRequest.getJSON('http://api.cartola.globo.com/time/busca.json?nome=' + time)
+	httpRequest.getJSON('https://api.cartolafc.globo.com/times?q=' + time)
 			.then(function(retorno){
 				activityIndicator.busy = false;
-				retorno.times.forEach(function(item){
+				retorno.forEach(function(item){
 					model.times.push({
-						escudo: item.imagens_escudo.img_escudo_160x160,
+						escudo: item.url_escudo_png,
 						time:  item.nome,
 						nome: item.nome_cartola,
 						slug: item.slug
@@ -58,7 +58,7 @@ function carregaTimes(time) {
 				    okButtonText: "OK"
 				};
 				dialogs.alert(options).then(function () {
-				    console.log("Race Chosen!");
+				    console.log("Não foi possível encontrar o time!");
 				});
 			});
 }

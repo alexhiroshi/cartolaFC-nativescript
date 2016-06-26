@@ -25,14 +25,12 @@ exports.jogosDaRodada = function() {
 };
 
 function carregaInformacoes() {
-	httpModule.getJSON('http://api.cartola.globo.com/mercado/status.json')
+	httpModule.getJSON('https://api.cartolafc.globo.com/mercado/status')
 				.then(function(retorno){
-					var mercado = retorno.mercado;
-
-					contaFechamento(mercado.fechamento.ano, mercado.fechamento.mes, mercado.fechamento.dia, mercado.fechamento.hora, mercado.fechamento.minuto);
+					contaFechamento(retorno.fechamento.ano, retorno.fechamento.mes, retorno.fechamento.dia, retorno.fechamento.hora, retorno.fechamento.minuto);
 					
-					model.set('rodadaAtual', mercado.rodada);
-					model.set('rodada', 'Rodada ' + mercado.rodada);
+					model.set('rodadaAtual', retorno.rodada_atual);
+					model.set('rodada', 'Rodada ' + retorno.rodada_atual);
 				});
 }
 

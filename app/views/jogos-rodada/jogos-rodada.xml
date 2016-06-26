@@ -5,9 +5,11 @@
 				<StackLayout orientation="horizontal" horizontalAlignment="center">
 					<Image src="{{ clubeCasaEscudo }}" width="40" height="40" cssClass="escuto" />
 					<Label text="{{ clubeCasa }}" />
+					<Label text="{{ placarCasa }}" />
 
 					<Label text="x" cssClass="contra" />
 
+					<Label text="{{ placarVisitante }}" />
 					<Label text="{{ clubeVisitante }}" />
 					<Image src="{{ clubeVisitanteEscudo }}" width="40" height="40" cssClass="escuto" />
 				</StackLayout>

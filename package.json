@@ -7,9 +7,19 @@
 		"id": "org.nativescript.cartolaFCnativescript",
 		"tns-ios": {
 			"version": "2.0.1"
+		},
+		"tns-android": {
+			"version": "2.0.0"
 		}
 	},
 	"dependencies": {
 		"tns-core-modules": "2.0.1"
+	},
+	"devDependencies": {
+		"babel-traverse": "6.10.4",
+		"babel-types": "6.10.2",
+		"babylon": "6.8.2",
+		"filewalker": "0.1.3",
+		"lazy": "1.0.11"
 	}
 }

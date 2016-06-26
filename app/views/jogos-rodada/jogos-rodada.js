@@ -22,27 +22,21 @@ exports.pageLoaded = function(args) {
 	carregaJogos(rodada);
 };
 
-function carregaJogos(rodada) {
-	var escudos = {
-		"Coritiba" : "cfc",
-		"Atlético-MG" : "cam",
-		"Atlético-PR" : "cap"
-	};
-	
+function carregaJogos(rodada) {	
 	resetModel();
 
-	httpRequest.getJSON('http://api.cartola.globo.com/partidas/' + rodada + '.json')
+	httpRequest.getJSON('https://api.cartolafc.globo.com/partidas')
 		.then(function(retorno){
+			var i = 0;
 			retorno.partidas.forEach(function(item){
-				var ce = escudos[item.clube_casa.nome] === undefined ? item.clube_casa.abreviacao.toLowerCase() : escudos[item.clube_casa.nome];
-				var ve = escudos[item.clube_visitante.nome] === undefined ? item.clube_visitante.abreviacao.toLowerCase() : escudos[item.clube_visitante.nome];
-				
 				model.partidas.push({
 					local: item.local,
-					clubeCasa: item.clube_casa.abreviacao,
-					clubeCasaEscudo: '~/images/escudos/' +  ce + '.png',
-					clubeVisitante: item.clube_visitante.abreviacao,
-					clubeVisitanteEscudo: '~/images/escudos/' + ve + '.png'
+					clubeCasa: retorno.clubes[item.clube_casa_id].abreviacao,
+					clubeCasaEscudo:retorno.clubes[item.clube_casa_id].escudos['60x60'],
+					placarCasa: ' (' + item.placar_oficial_mandante + ') ',
+					clubeVisitante: retorno.clubes[item.clube_visitante_id].abreviacao,
+					clubeVisitanteEscudo: retorno.clubes[item.clube_visitante_id].escudos['60x60'],
+					placarVisitante: ' (' + item.placar_oficial_visitante + ') '
 				});
 			});
 		});

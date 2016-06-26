@@ -18,9 +18,9 @@ function carregaDetalhe() {
 	detalhe.set('time', context.time);
 	detalhe.set('nome', 'Técnico: ' + context.nome);
 
-	httpRequest.getJSON('http://api.cartola.globo.com/time_adv/' + context.slug + '.json')
+	httpRequest.getJSON('https://api.cartolafc.globo.com/time/' + context.slug)
 			.then(function(retorno) {
-				detalhe.set('patrimonio', 'C$ ' + retorno.time.patrimonio.toFixed(2));
-				detalhe.set('pontuacao', 'Pontuação: ' + retorno.time.pontuacao + ' pts');
+				detalhe.set('patrimonio', 'C$ ' + retorno.patrimonio.toFixed(2));
+				detalhe.set('pontuacao', 'Pontuação: ' + retorno.pontos.toFixed(2) + ' pts');
 			});
 }
